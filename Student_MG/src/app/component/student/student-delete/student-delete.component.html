@@ -1,0 +1,54 @@
+<div style="width: 80%; margin: 20px auto;">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-danger">Are you sure delete {{student.name}}'s data?</h4>
+    </div>
+  </div>
+  <form #addStudent="ngForm" (ngSubmit)="delete(addStudent)">
+    <div class="form-group row mb-1">
+      <div>
+        <label class="col-md-2 col-form-label" style="margin-right: 50px;">Student</label>
+        <label>{{student.name}}</label>
+      </div>
+
+    </div>
+    <div class="form-group row mb-1">
+      <div>
+        <label class="col-md-2 col-form-label" style="margin-right: 50px;">DOB</label>
+        <label>{{student.dob | date:'medium'}}</label>
+      </div>
+    </div>
+    <div class="form-group row mb-1">
+      <div>
+        <label class="col-md-2 col-form-label" style="margin-right: 50px;">Address</label>
+        <label>{{student.address}}</label>
+      </div>
+    </div>
+    <div class="form-group row mb-1">
+      <div>
+        <label class="col-md-2 col-form-label" style="margin-right: 50px;">Phone</label>
+        <label>{{student.phone}}</label>
+      </div>
+    </div>
+    <div class="form-group row mb-1">
+      <div>
+        <label class="col-md-2 col-form-label" style="margin-right: 50px;">Email</label>
+        <label>{{student.email}}</label>
+      </div>
+
+
+    </div>
+    <div class="form-group row mb-1">
+
+      <div class="col-md-12">
+        <button type="submit" class=" btn btn-sm btn-outline-danger" style="margin-right: 10px;">Yes</button>
+        <button [routerLink]="['/student']" class=" btn btn-sm btn-outline-secondary">No</button>
+      </div>
+    </div>
+  </form>
+  <div class="col-md-12">
+    <a class="btn btn-link px-0" [routerLink]="['/student']">Back to List </a>
+  </div>
+</div>
+
+

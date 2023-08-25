@@ -1,0 +1,33 @@
+
+<div>
+  <div class="d-flex justify-content-between" style="margin-bottom: 10px; margin-top: 20px;">
+    <h4>Student List</h4>
+    <button class="btn btn-outline-success" [routerLink]="['/create']">+ Add New</button>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let s of students">
+      <td>{{s.name}}</td>
+      <td>{{s.dob |date:"mediumDate"}}</td>
+      <td>{{s.address}}</td>
+      <td>{{s.phone}}</td>
+      <td>{{s.email}}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary" style="margin-right: 5px;" [routerLink]="['/edit', s.id]">Edit</button>
+        <button class="btn btn-sm btn-outline-danger" [routerLink]="['/delete', s.id]">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
